@@ -1,0 +1,3 @@
+Aufgabe 1: Was passiert, wenn ein v-container einen v-container enthält? Welche Margin, welches Padding findet Verwendung?
+Genau das gleiche Margin und Padding wie jeder andere v-container solange keine extre Werte angegeben werden. 
+
