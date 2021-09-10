@@ -1,3 +1,14 @@
 Aufgabe 1: Was passiert, wenn ein v-container einen v-container enthält? Welche Margin, welches Padding findet Verwendung?
 Genau das gleiche Margin und Padding wie jeder andere v-container solange keine extre Werte angegeben werden. 
 
+Aufgabe 2: Wie sieht der Code aus, um folgendes Layout Problem zu lösen?
+  <v-app>
+    <v-main class="blue">
+      <v-container d-flex align-start flex-column yellow style="height: 500px">
+        <p class="mb-auto">Oben</p>
+        <v-spacer></v-spacer>
+        <p>Unten</p>
+      </v-container>
+    </v-main>
+  </v-app>
+
