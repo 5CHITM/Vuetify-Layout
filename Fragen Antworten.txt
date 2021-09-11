@@ -1,3 +1,6 @@
+SL
+
+
 Aufgabe 1: Was passiert, wenn ein v-container einen v-container enthält? Welche Margin, welches Padding findet Verwendung?
 Genau das gleiche Margin und Padding wie jeder andere v-container solange keine extre Werte angegeben werden. 
 
@@ -5,10 +8,99 @@ Aufgabe 2: Wie sieht der Code aus, um folgendes Layout Problem zu lösen?
   <v-app>
     <v-main class="blue">
       <v-container d-flex align-start flex-column yellow style="height: 500px">
-        <p class="mb-auto">Oben</p>
+        <p>Oben</p>
         <v-spacer></v-spacer>
         <p>Unten</p>
       </v-container>
     </v-main>
   </v-app>
 
+Aufgabe 3: Wie sieht der Code aus, um folgendes Layout Problem zu lösen?
+  <v-app>
+    <v-main class="blue">
+      <v-container d-flex align-center justify-center yellow style="height: 500px">
+        <p class="">Mitte</p>
+      </v-container>
+    </v-main>
+  </v-app>
+
+Aufgabe 4: Welche Eigenschaften wurden zusätzlich durch fill-height dem v-container gegeben?
+.container.fill-height {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+Aufgabe 5: Wie hoch ist das div mit dem Text "Paragraf 2 direkt aus v-container" und warum?
+260px hoch aber ohne dem Margin. Mit Margin genau so hoch wie die der Text "Paragraf 1 direkt aus v-container". Warum? Weil es eine Flexbox ist.
+
+Aufgabe 6: Erstelle das Vuetify Layout, dargestellt auf der nächsten Seite (Daten und Bilder in Vuetify Layout Angabe.zip).
+  <v-app>
+    <v-main>
+      <v-container blue-grey lighten-4 d-flex flex-row justify-space-around flex-wrap>
+        <div v-for="i in items" :key="i" d-flex style="width: 300px">
+          <v-img :src="i.image"></v-img>
+          <p><span class="font-weight-bold">Besitzer:</span> {{ i.owner }}</p>
+          <p><span class="font-weight-bold">KM Stand:</span> {{ i.km }}</p>
+          <p><span class="font-weight-bold">Beschreibung:</span> {{ i.description }}</p>
+        </div>
+      </v-container>
+    </v-main>
+  </v-app>
+
+Aufgabe 7: Erstelle ein Grid mit einer Zeile und drei Spalten. Jede Spalte ist in den Auflösungen sm, md, lg, xl 4 Einheiten
+breit und in den Auflösungen xs 12 Einheiten breit. Verwende auch v-container. Teste dein Werk!
+<v-app>
+    <v-main>
+      <v-container>
+        <v-row>
+          <v-col cols="12" sm="4" md="4" lg="4" xl="4" xs="12" class="blue lighten-5">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
+            et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+            rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+          </v-col>
+          <v-col cols="12" sm="4" md="4" lg="4" xl="4" xs="12" class="green lighten-5">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
+            et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+          </v-col>
+          <v-col cols="12" sm="4" md="4" lg="4" xl="4" xs="12" class="red lighten-5">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-main>
+  </v-app>
+
+
+Aufgabe 8: Erstelle den Code zu obigem Bild.
+  <v-app>
+    <v-main>
+      <v-container fluid>
+        <v-row class="yellow" justify="center" align="center">
+          <v-col cols="12" md="2" class="purple lighten-4">
+            <span>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis possimus id exercitationem velit dignissimos repellendus qui, neque illo! Perspiciatis id praesentium
+              impedit rerum vel velit. Ipsam fugit dignissimos voluptatibus sapiente!
+            </span>
+          </v-col>
+          <v-col cols="12" md="2" class="green lighten-5">
+            <span>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis possimus id exercitationem velit dignissimos repellendus qui, neque illo!
+            </span>
+          </v-col>
+          <v-col cols="12" md="2" class="red lighten-5" align-self="end">
+            <span>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis possimus id exercitationem velit dignissimos repellendus qui, neque illo!
+            </span>
+          </v-col>
+          <v-col cols="12" md="2" class="blue lighten-5">
+            <span>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis possimus id exercitationem velit dignissimos repellendus qui, neque illo! Perspiciatis id praesentium
+              impedit rerum vel velit. Ipsam fugit dignissimos voluptatibus sapiente!
+            </span>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-main>
+  </v-app>
